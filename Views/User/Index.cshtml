@@ -1,0 +1,33 @@
+﻿@model List<Data.Models.User>
+
+<h2>User List</h2>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Rating</th>
+        <th>Full Name</th>
+        <th>Registration Date</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Name</td>
+            <td>@user.Email</td>
+            <td>@user.Rating</td>
+            <td>@user.FullName</td>
+            <td>@user.RegistrationDate</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = user.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = user.Id })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

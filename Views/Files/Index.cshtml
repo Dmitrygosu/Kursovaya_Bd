@@ -1,0 +1,40 @@
+﻿@using Data.Models
+@model List<FileTableModel>
+
+<h2>Таблица файлов</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID_Исходного файла</th>
+            <th>ID_Итогового файла</th>
+            <th>Страниц в исходном файле</th>
+            <th>Страниц в итоговом файле</th>
+            <th>Ссылка на исходный файл</th>
+            <th>Ссылка на итоговый файл</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.SourceFileId</td>
+                <td>@file.TargetFileId</td>
+                <td>@file.PagesInSourceFile</td>
+                <td>@file.PagesInTargetFile</td>
+                <td>@file.SourceFileLink</td>
+                <td>@file.TargetFileLink</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = file.SourceFileId }) |
+                    
+                    @Html.ActionLink("Delete", "Delete", new { id = file.SourceFileId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

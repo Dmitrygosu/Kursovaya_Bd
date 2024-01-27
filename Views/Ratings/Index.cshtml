@@ -1,0 +1,29 @@
+﻿@using System.Web.Mvc.Html
+
+@model List<Data.Models.Rating>
+
+    <h2>Список оценок наших работников</h2>
+
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Value</th>
+            <th>Translator Name</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var rating in Model)
+        {
+            <tr>
+                <td>@rating.RatingId</td>
+                <td>@rating.Value</td>
+                <td>@rating.TranslatorName</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = rating.RatingId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = rating.RatingId })
+                </td>
+            </tr>
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>

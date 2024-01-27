@@ -1,0 +1,14 @@
+D:\RA\Translaters_Agency\Data\bin\Debug\Data.dll.config
+D:\RA\Translaters_Agency\Data\bin\Debug\Data.dll
+D:\RA\Translaters_Agency\Data\bin\Debug\Data.pdb
+D:\RA\Translaters_Agency\Data\bin\Debug\EntityFramework.dll
+D:\RA\Translaters_Agency\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\RA\Translaters_Agency\Data\bin\Debug\EntityFramework.xml
+D:\RA\Translaters_Agency\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\RA\Translaters_Agency\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+D:\RA\Translaters_Agency\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+D:\RA\Translaters_Agency\Data\obj\Debug\Data.csproj.CopyComplete
+D:\RA\Translaters_Agency\Data\obj\Debug\Data.dll
+D:\RA\Translaters_Agency\Data\obj\Debug\Data.pdb
+D:\RA\Translaters_Agency\Data\obj\Debug\Data.Migrations.Main_Table_Change_Migration.resources
+D:\RA\Translaters_Agency\Data\obj\Debug\Data.csproj.GenerateResource.cache

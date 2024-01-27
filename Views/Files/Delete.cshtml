@@ -1,0 +1,65 @@
+﻿@model Data.Models.FileTableModel
+
+<h2>Delete</h2>
+
+<div>
+    <h4>Are you sure you want to delete this?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceFileId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceFileId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetFileId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetFileId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PagesInSourceFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PagesInSourceFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PagesInTargetFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PagesInTargetFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceFileLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceFileLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TargetFileLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TargetFileLink)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "Files", new { id = Model.SourceFileId }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Delete" class="btn btn-default" />
+    }
+
+    @Html.ActionLink("Cancel", "Index")
+</div>

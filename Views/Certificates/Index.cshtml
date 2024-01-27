@@ -1,0 +1,31 @@
+﻿@model List<Data.Models.Certificate>
+
+<h2>Список сертификатов наших работников</h2>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Certificate Name</th>
+        <th>Issuing Organization</th>
+        <th>Issue Date</th>
+        <th>Expiry Date</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var certificate in Model)
+    {
+        <tr>
+            <td>@certificate.CertificateId</td>
+            <td>@certificate.CertificateName</td>
+            <td>@certificate.IssuingOrganization</td>
+            <td>@certificate.IssueDate</td>
+            <td>@certificate.ExpiryDate</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = certificate.CertificateId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = certificate.CertificateId })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

@@ -1,0 +1,32 @@
+﻿@model List<Data.Models.Payment>
+
+<h2>Таблица типов платежей</h2>
+
+<p>
+    @Html.ActionLink("Создать новый", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID_Типа_платежа</th>
+            <th>Название платежной системы</th>
+            <th>Статус платежа</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td>@payment.PaymentTypeId</td>
+                <td>@payment.PaymentName</td>
+                <td>@(payment.PaymentStatus ? "Платеж завершен" : "Платеж не завершен")</td>
+                <td>
+                    @Html.ActionLink("Редактировать", "Edit", new { id = payment.PaymentTypeId }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = payment.PaymentTypeId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

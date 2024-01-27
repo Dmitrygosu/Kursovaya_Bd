@@ -1,0 +1,33 @@
+﻿@model List<Data.Models.Translator>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Translator Index</h2>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Рейтинг</th>
+        <th>Зарплата</th>
+        <th>Дата рождения</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var translator in Model)
+    {
+        <tr>
+            <td>@translator.ID_Переводчика</td>
+            <td>@translator.Рейтинг</td>
+            <td>@translator.Зарплата</td>
+            <td>@translator.Дата_рождения</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = translator.ID_Переводчика }) |
+                @Html.ActionLink("Delete", "Delete", new { id = translator.ID_Переводчика })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

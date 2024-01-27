@@ -1,0 +1,26 @@
+﻿@model List<Data.Models.Comment>
+
+<h2>Список комментариев наших работников</h2>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Text</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var comment in Model)
+    {
+        <tr>
+            <td>@comment.Id</td>
+            <td>@comment.Text</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = comment.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = comment.Id })
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
